@@ -1,0 +1,26 @@
+{
+  "name": "invoiceApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/AHors93/invoiceApp.git",
+  "keywords": [],
+  "author": "<adam.horscraft@foodhub.co.uk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AHors93/invoiceApp/issues"
+  },
+  "homepage": "https://github.com/AHors93/invoiceApp#readme",
+  "devDependencies": {
+    "lint": "^0.7.0",
+    "prettier": "2.2.1",
+    "typescript": "^4.1.5"
+  },
+  "dependencies": {
+    "husky": "^5.1.0",
+    "react": "^17.0.1"
+  }
+}
