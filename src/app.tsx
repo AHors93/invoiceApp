@@ -1,40 +1,59 @@
 import React from "react";
 
-export const App = () => {
-  return (
-    <React.Fragment>
-      <div class="wrapper">
-        <h1>Invoice Logger</h1>
+export class App extends React.Component {
+  addEntry: any;
+  setState: any;
+  constructor(props: {} | Readonly<{}>) {
+    super(props);
+    interface IEntry {
+      toFrom: string;
+      Details: string;
+      Amount: number;
+    }
+  }
+  handletoFrom = (e: { target: { value: any } }) => {
+    this.setState({
+      toFrom: e.target.value,
+    });
+  };
+  handleDetails = (e: { target: { value: any } }) => {
+    this.setState({
+      Details: e.target.value,
+    });
+  };
+  handleAmount = (e: { target: { value: any } }) => {
+    this.setState({
+      Amount: e.target.value,
+    });
+  };
 
-        <ul class="item-list"></ul>
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1>Invoice Logger</h1>
+          <footer>
+            <div className="form-selector">
+              <label>Type:</label>
+              <select id="type">
+                <option value="invoice">Invoice</option>
+                <option value="payment">Payment</option>
+              </select>
+            </div>
+            <form className="new-item-form">
+              <label>To / From:</label>
+              <input type="text" id="tofrom" onChange={this.handletoFrom} />
+              <label>Details:</label>
+              <input type="text" id="details" onChange={this.handleDetails} />
+              <label>Amount (£):</label>
+              <input type="number" id="amount" onChange={this.handleAmount} />
+              <button type="submit" id="addbutton" onClick={this.addEntry}>
+                Add
+              </button>
+            </form>
+          </footer>
+        </header>
       </div>
-
-      <footer>
-        <form class="new-item-form">
-          <div class="field">
-            <label>Type:</label>
-            <select id="type">
-              <option value="invoice">Invoice</option>
-              <option value="payment">Payment</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>To / From:</label>
-            <input type="text" id="tofrom" />
-          </div>
-          <div class="field">
-            <label>Details:</label>
-            <input type="text" id="details" />
-          </div>
-          <div class="field">
-            <label>Amount (£):</label>
-            <input type="number" id="amount" />
-          </div>
-          <div>
-            <button id="addbutton">Add</button>
-          </div>
-        </form>
-      </footer>
-    </React.Fragment>
-  );
-};
+    );
+  }
+}

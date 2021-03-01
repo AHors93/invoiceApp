@@ -2,9 +2,12 @@ body {
   margin: 0;
   font-family: Roboto;
 }
-.wrapper {
+.App {
   max-width: 960px;
   margin: 0 auto;
+}
+.App-header {
+  margin: auto;
 }
 h1 {
   margin: 40px auto;
@@ -52,9 +55,13 @@ select {
   border: 1px solid #e1e1e1;
   border-radius: 4px;
 }
-.field {
+.form-selector {
   display: inline-block;
   margin: 0 10px;
+}
+.new-item-form {
+  justify-content: center;
+  align-items: center;
 }
 button {
   color: white;
